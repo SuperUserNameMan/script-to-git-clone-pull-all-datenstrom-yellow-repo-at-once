@@ -7,7 +7,7 @@ cd ./yellow_cms
 
 echo "Reading update_cms_yellow.ini"
 
-subdir="."
+subdir="./"
 
 while IFS=";" read -r line description
 do
@@ -19,7 +19,7 @@ do
 	
 		echo -e "\e[36m$line\e[m"
 
-		subdir="" # reset
+		subdir="./" # reset
 	
 	elif [[ "$line" =~ ^subdir= ]]; then
 
@@ -49,7 +49,7 @@ do
 		fi
 
 		# Clone the repo or update the repo :
-  
+
 		[[ ! -d "$subdir/$dstdir" ]] && git clone "$url" "$subdir/$dstdir" || git -C "$subdir/$dstdir" pull
 
 		echo ""
