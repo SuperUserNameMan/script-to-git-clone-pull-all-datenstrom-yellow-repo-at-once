@@ -49,9 +49,7 @@ do
 		fi
 
 		# Clone the repo or update the repo :
-
-		echo git -C ".$subdir/$dstdir" clone "$url" 
-
+  
 		[[ ! -d "$subdir/$dstdir" ]] && git clone "$url" "$subdir/$dstdir" || git -C "$subdir/$dstdir" pull
 
 		echo ""
